@@ -14,11 +14,22 @@
   margin: 10px 0; }
 
 .wrapper .results {
-  width: 10%;
-  height: 30px;
+  width: 16%;
+  height: auto;
   border: 1px solid #44d6ec;
   margin: 10px 0;
-  outline: none; }
+  outline: none;
+  padding: 5px;
+  font-size: 14px; }
+
+.wrapper .button {
+  width: 15%;
+  background: #44d6ec;
+  color: #fff;
+  border: none;
+  padding: 8px;
+  display: inline-block;
+  cursor: pointer; }
 
 .wrapper h1 {
   font-size: 15px; }

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <meta charset="utf-8">
+    <link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class='wrapper'>
+        <span class='button'>Variant</span>
+        <div class='results'></div>
+
+        <span class='button'>Kombi</span>
+        <div class='results'></div>
+
+        <span class='button'>Fusca</span>
+        <div class='results'></div>
+    </div>
+    <script type="text/javascript">
+    var btn = document.querySelector('.button');
+    var content = document.querySelector('.results');
+    var results = '';
+
+    var Cars = function(marca, ano, preco){
+        this.marca = marca;
+        this.ano = ano;
+        this.preco = preco;
+    }
+
+    var variant = new Cars('Wolkswagen', 1970, 50000);
+    var kombi = new Cars('Wolkswagen',   1970, 90000);
+    var fusca = new Cars('Wolkswagen',   1970, 10000);
+
+    var getProperty = function(brand){
+        Object.getOwnPropertyNames(brand).forEach(function(val, idx, obj){
+           return results += val + ':' + brand[val];
+            
+        });
+    };
+
+    var c1 = function(){
+       getProperty(variant);
+       content.textContent = results;
+       
+    }
+
+    // var c2 = function(){
+    //    getProperty(kombi);
+    //    content.textContent = results;
+    // }
+
+
+
+
+    btn.addEventListener('click', c1);
+    </script>
+</body>
+
+</html>
