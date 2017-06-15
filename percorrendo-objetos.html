@@ -9,52 +9,60 @@
 
 <body>
     <div class='wrapper'>
-        <span class='button'>Variant</span>
+        <span class='button1'>Variant</span>
         <div class='results'></div>
-
-        <span class='button'>Kombi</span>
+        <span class='button2'>Kombi</span>
         <div class='results'></div>
-
-        <span class='button'>Fusca</span>
+        <span class='button3'>Fusca</span>
         <div class='results'></div>
     </div>
+    
+    <!-- scripts -->
     <script type="text/javascript">
-    var btn = document.querySelector('.button');
+    var btn1 = document.querySelector('.button1');
+    var btn2 = document.querySelector('.button2');
+    var btn3 = document.querySelector('.button3');
+
     var content = document.querySelector('.results');
     var results = '';
 
-    var Cars = function(marca, ano, preco){
+    var Cars = function(marca, ano, preco) {
         this.marca = marca;
         this.ano = ano;
         this.preco = preco;
     }
 
     var variant = new Cars('Wolkswagen', 1970, 50000);
-    var kombi = new Cars('Wolkswagen',   1970, 90000);
-    var fusca = new Cars('Wolkswagen',   1970, 10000);
+    var kombi = new Cars('Wolkswagen', 1970, 90000);
+    var fusca = new Cars('Wolkswagen', 1970, 10000);
 
-    var getProperty = function(brand){
-        Object.getOwnPropertyNames(brand).forEach(function(val, idx, obj){
-           return results += val + ':' + brand[val];
-            
+    var getProperty = function(brand) {
+        Object.getOwnPropertyNames(brand).forEach(function(val, idx, obj) {
+            return results += val + ':' + brand[val];
         });
     };
 
-    var c1 = function(){
-       getProperty(variant);
-       content.textContent = results;
-       
+    var c1 = function() {
+        getProperty(variant);
+        this.textContent = results;
     }
 
-    // var c2 = function(){
-    //    getProperty(kombi);
-    //    content.textContent = results;
-    // }
+    var c2 = function(){
+       getProperty(kombi);
+       this.textContent = results;
+    }
+
+    var c3 = function(){
+       getProperty(fusca);
+       this.textContent = results;
+    }
 
 
 
 
-    btn.addEventListener('click', c1);
+    btn1.addEventListener('click', c1);
+    btn2.addEventListener('click', c2);
+    btn3.addEventListener('click', c3);
     </script>
 </body>
 
