@@ -1,10 +1,19 @@
-var Person = function Person(name, age, sex) {
-    this.name = name;
-    this.age = age;
-    this.sex = sex;
-};
+const Person = function(name, age, sex){
+	this.name = name;
+	this.age =  age;
+	this.sex = sex;
+}
 
-var personOne = new Person('Paul', 30, 'male');
-var personTwo = new Person('karen', 35, 'female');
-console.log(personOne);
-console.log(personTwo);
+
+const paul = new Person('paulo', 40, 'masculino');
+
+const karen = new Person('karen', 40, 'feminino');
+
+const john = new Person('karen', 40, 'feminino');
+
+
+console.log(paul);
+
+console.log(karen);
+
+console.log(john);
