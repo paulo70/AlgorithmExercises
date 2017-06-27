@@ -2,9 +2,22 @@ const createPerson = function(name, age, sex){
 	return{
 		name: name,
 		age: age,
-		sex: sex
+		sex: sex,
+		getAge: function(){
+			return this.age;
+		},
+
+		setAge: function(date){
+			return this.age = date;
+		}
 	}
 };
 
-console.log(createPerson('flanders', 30, 'masculino'));
-console.log(createPerson('melissa', 25, 'feminino'));
+
+const melissa = createPerson('melissa', 40, 'feminino');
+
+console.log('change age', melissa.setAge(50));
+
+console.log(melissa.getAge())
+
+
